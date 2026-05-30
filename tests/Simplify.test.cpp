@@ -272,7 +272,7 @@ TEST_CASE_FIXTURE(SimplifyFixture, "error_and_indeterminate_types")
     CHECK(isIntersection(intersect(pendingTy, errorTy)));
 }
 
-TEST_CASE_FIXTURE(SimplifyFixture, "unknown_and_concrete")
+TEST_CASE_FIXTURE(SimplifyFixture, "error_and_concrete")
 {
     CHECK(neverTy == intersect(numberTy, errorTy));
     CHECK(neverTy == intersect(errorTy, numberTy));

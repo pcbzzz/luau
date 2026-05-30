@@ -1114,7 +1114,7 @@ TEST_CASE_FIXTURE(ACFixture, "local_function")
     CHECK(ac2.entryMap.empty());
 }
 
-TEST_CASE_FIXTURE(ACFixture, "local_function")
+TEST_CASE_FIXTURE(ACFixture, "local_function_no_match")
 {
     check(R"(
         local function @1
@@ -1288,7 +1288,7 @@ TEST_CASE_FIXTURE(ACFixture, "function_expr_params")
     CHECK_EQ(ac2.context, AutocompleteContext::Statement);
 }
 
-TEST_CASE_FIXTURE(ACFixture, "local_initializer")
+TEST_CASE_FIXTURE(ACFixture, "local_initializer_2")
 {
     check(R"(
         local a = t@1
@@ -1299,7 +1299,7 @@ TEST_CASE_FIXTURE(ACFixture, "local_initializer")
     CHECK_EQ(ac.entryMap.count("true"), 1);
 }
 
-TEST_CASE_FIXTURE(ACFixture, "local_initializer_2")
+TEST_CASE_FIXTURE(ACFixture, "local_initializer_3")
 {
     check(R"(
         local a=@1
@@ -1309,7 +1309,7 @@ TEST_CASE_FIXTURE(ACFixture, "local_initializer_2")
     CHECK(ac.entryMap.count("table"));
 }
 
-TEST_CASE_FIXTURE(ACFixture, "get_member_completions")
+TEST_CASE_FIXTURE(ACFixture, "get_member_completions_no_match")
 {
     check(R"(
         local a = 12.@13
@@ -4502,7 +4502,7 @@ foo(@1)
     CHECK_EQ(EXPECTED_INSERT, *ac.entryMap[kGeneratedAnonymousFunctionEntryName].insertText);
 }
 
-TEST_CASE_FIXTURE(ACFixture, "anonymous_autofilled_table_literal_args")
+TEST_CASE_FIXTURE(ACFixture, "anonymous_autofilled_table_literal_args_ret_typeof")
 {
     check(R"(
 local function foo(a: () -> { x: number, y: number }) return {x=2, y = 3} end
@@ -5776,7 +5776,7 @@ TEST_CASE_FIXTURE(ACFixture, "ac_static_method_autocomplete")
     CHECK(ac.entryMap.count("new") > 0);
 }
 
-TEST_CASE_FIXTURE(ACFixture, "class_autocomplete_classname_inside_method")
+TEST_CASE_FIXTURE(ACFixture, "class_autocomplete_uses_first_class_definition")
 {
     ScopedFastFlag sffs[] = {
         {FFlag::DebugLuauForceOldSolver, false},

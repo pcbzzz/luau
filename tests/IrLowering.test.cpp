@@ -4526,7 +4526,7 @@ bb_bytecode_1:
     );
 }
 
-TEST_CASE_FIXTURE(LoweringFixture, "LibraryFieldTypesAndConstants")
+TEST_CASE_FIXTURE(LoweringFixture, "LibraryFieldTypesAndConstantsCApi")
 {
     ensureVectorFloat();
 
@@ -4562,7 +4562,7 @@ bb_bytecode_1:
     );
 }
 
-TEST_CASE_FIXTURE(LoweringFixture, "LibraryFieldTypesAndConstantsCApi")
+TEST_CASE_FIXTURE(LoweringFixture, "LibraryFieldTypesAndConstantsCApiReturn")
 {
     ensureVectorSize3();
 

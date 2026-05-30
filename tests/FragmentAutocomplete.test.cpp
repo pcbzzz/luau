@@ -989,7 +989,7 @@ TEST_SUITE_END();
 // NOLINTBEGIN(bugprone-unchecked-optional-access)
 TEST_SUITE_BEGIN("FragmentAutocompleteTraversalTests");
 
-TEST_CASE_FIXTURE(FragmentAutocompleteFixture, "just_two_locals")
+TEST_CASE_FIXTURE(FragmentAutocompleteFixture, "just_two_locals_ancestry")
 {
     auto result = runAutocompleteVisitor(
         R"(
@@ -2066,7 +2066,7 @@ TEST_CASE_FIXTURE(FragmentAutocompleteFixture, "empty_program")
     );
 }
 
-TEST_CASE_FIXTURE(FragmentAutocompleteFixture, "local_initializer")
+TEST_CASE_FIXTURE(FragmentAutocompleteFixture, "local_initializer_fragment")
 {
     const std::string source = "local a =@1";
     autocompleteFragmentInBothSolvers(
@@ -2176,7 +2176,7 @@ TEST_CASE_FIXTURE(FragmentAutocompleteFixture, "dont_suggest_local_before_its_de
     );
 }
 
-TEST_CASE_FIXTURE(FragmentAutocompleteFixture, "nested_recursive_function")
+TEST_CASE_FIXTURE(FragmentAutocompleteFixture, "nested_recursive_function_fragment")
 {
     const std::string source = R"(
         local function outer()
@@ -3346,7 +3346,7 @@ end
     );
 }
 
-TEST_CASE_FIXTURE(FragmentAutocompleteBuiltinsFixture, "for_loop_recommends")
+TEST_CASE_FIXTURE(FragmentAutocompleteBuiltinsFixture, "for_loop_recommends_string_array")
 {
     const std::string source = R"(
 local testArr: {string} = {
@@ -3562,7 +3562,7 @@ local foo = 8)");
     CHECK(*pos == Position{1, 0});
 }
 
-TEST_CASE_FIXTURE(FragmentAutocompleteBuiltinsFixture, "block_diff_added_locals_3")
+TEST_CASE_FIXTURE(FragmentAutocompleteBuiltinsFixture, "block_diff_added_locals_3_fake_similarity")
 {
     const std::string source = R"(local f1 = 4
 local f2 = 2 + 1)";

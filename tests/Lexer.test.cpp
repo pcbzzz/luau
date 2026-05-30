@@ -403,7 +403,7 @@ TEST_CASE("lexer_determines_comment_block_depth_0")
     CHECK_EQ(lexeme.getBlockDepth(), 0);
 }
 
-TEST_CASE("lexer_determines_string_block_depth_1")
+TEST_CASE("lexer_determines_comment_block_depth_1")
 {
     const std::string testInput = "--[=[ μέλλον ]=]";
     Luau::Allocator alloc;
@@ -415,7 +415,7 @@ TEST_CASE("lexer_determines_string_block_depth_1")
     CHECK_EQ(lexeme.getBlockDepth(), 1);
 }
 
-TEST_CASE("lexer_determines_string_block_depth_2")
+TEST_CASE("lexer_determines_comment_block_depth_2")
 {
     const std::string testInput = "--[==[ test ]==]";
     Luau::Allocator alloc;

@@ -2338,7 +2338,7 @@ TEST_CASE_FIXTURE(Fixture, "parse_extern_type_declarations_missing_with")
     CHECK(prop2.location == Location({7, 12}, {7, 25}));
 }
 
-TEST_CASE_FIXTURE(Fixture, "parse_extern_type_declarations")
+TEST_CASE_FIXTURE(Fixture, "parse_extern_type_declarations_no_indexer")
 {
     AstStatBlock* stat = parseEx(R"(
         declare extern type Foo with
@@ -2388,7 +2388,7 @@ TEST_CASE_FIXTURE(Fixture, "parse_extern_type_declarations")
     CHECK(prop2.location == Location({7, 12}, {7, 25}));
 }
 
-TEST_CASE_FIXTURE(Fixture, "parse_extern_type_declarations_missing_with")
+TEST_CASE_FIXTURE(Fixture, "parse_extern_type_declarations_missing_with_no_indexer")
 {
     ParseResult result = tryParse(R"(
         declare extern type Foo
