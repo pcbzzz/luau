@@ -590,7 +590,7 @@ TEST_CASE("field")
     CHECK(toString(PathBuilder().prop("foo").build()) == R"([read "foo"])");
 }
 
-TEST_CASE("index")
+TEST_CASE("index_to_string")
 {
     CHECK(toString(PathBuilder().index(0).build()) == "[0]");
 }
@@ -646,7 +646,7 @@ TEST_CASE_FIXTURE(TypePathFixture, "writeProp")
     CHECK(p == Path(TypePath::Property::write("foo")));
 }
 
-TEST_CASE("index")
+TEST_CASE("index_constructor")
 {
     Path p = PathBuilder().index(0).build();
     CHECK(p == Path(TypePath::Index{0}));
@@ -675,7 +675,7 @@ TEST_CASE("chained")
         Path({Index{0}, TypePath::Property::read("foo"), TypeField::Metatable, TypePath::Property::read("bar"), PackField::Arguments, Index{1}})
     );
 }
-TEST_CASE("pack_slice")
+TEST_CASE("pack_slice_constructor")
 {
     CHECK(PathBuilder().packSlice(3).build() == Path(PackSlice{3}));
 }

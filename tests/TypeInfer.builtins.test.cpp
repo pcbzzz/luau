@@ -1644,7 +1644,7 @@ TEST_CASE_FIXTURE(BuiltinsFixture, "find_capture_types3")
     CHECK_EQ(toString(requireType("e")), "number?");
 }
 
-TEST_CASE_FIXTURE(BuiltinsFixture, "find_capture_types3")
+TEST_CASE_FIXTURE(BuiltinsFixture, "find_capture_types4")
 {
     CheckResult result = check(R"END(
         local d, e, a, b = string.find("This is a string", "(.()(%a+))", 1, true)

@@ -4578,7 +4578,7 @@ TEST_CASE_FIXTURE(Fixture, "write_annotations_are_supported_with_the_new_solver"
     LUAU_REQUIRE_NO_ERRORS(result);
 }
 
-TEST_CASE_FIXTURE(Fixture, "read_and_write_only_table_properties_are_unsupported")
+TEST_CASE_FIXTURE(Fixture, "read_only_indexers_are_unsupported")
 {
     DOES_NOT_PASS_NEW_SOLVER_GUARD();
 

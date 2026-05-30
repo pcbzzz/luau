@@ -5390,7 +5390,7 @@ TEST_CASE_FIXTURE(IrBuilderFixture, "DominanceVerification4")
 }
 
 // 'Static Single Assignment Book' Figure 4.5
-TEST_CASE_FIXTURE(IrBuilderFixture, "DominanceVerification4")
+TEST_CASE_FIXTURE(IrBuilderFixture, "DominanceVerification5")
 {
     defineCfgTree({{1}, {2}, {3, 7}, {4, 5}, {6}, {6}, {8}, {8}, {9}, {10, 11}, {11}, {9, 12}, {2}});
 

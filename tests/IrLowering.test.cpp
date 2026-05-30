@@ -4463,7 +4463,7 @@ bb_bytecode_1:
     );
 }
 
-TEST_CASE_FIXTURE(LoweringFixture, "LibraryFieldTypesAndConstants")
+TEST_CASE_FIXTURE(LoweringFixture, "LibraryFieldTypesAndConstantsCApi")
 {
     CHECK_EQ(
         "\n" + getCodegenAssembly(
@@ -4497,7 +4497,7 @@ bb_bytecode_1:
     );
 }
 
-TEST_CASE_FIXTURE(LoweringFixture, "LibraryFieldTypesAndConstantsCApi")
+TEST_CASE_FIXTURE(LoweringFixture, "LibraryFieldTypesAndConstantsCApiReturn")
 {
     CHECK_EQ(
         "\n" + getCodegenAssemblyUsingCApi(
